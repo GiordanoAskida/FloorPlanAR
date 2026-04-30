@@ -158,7 +158,7 @@ Area: ${"%.2f".format(area())}m2")
             val p1 = roomPoints[i].anchor.pose
             val p2 = roomPoints[(i+1)%n].anchor.pose
             val mid = Pose(floatArrayOf((p1.tx()+p2.tx())/2f, p1.ty(), (p1.tz()+p2.tz())/2f), p1.rotationQuaternion)
-            proj(mid, vm, pm, w, h)?.let { dists.add(PointF(it.first, it.second) to "${"%.2f".format(dist(p1,p2))}m") }
+            proj(mid, vm, pm, w, h)?.let { val dm = "%.2f".format(dist(p1,p2)) dists.add(PointF(it.first, it.second) to "${dm}m") }
         }
         binding.overlayView.setPoints(pts, dists)
     }
