@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.tuoapp.floorplan.ArSurfaceView
+        android:id="@+id/arSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.tuoapp.floorplan.FloorPlanOverlay
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <View android:layout_width="40dp" android:layout_height="2dp" android:background="#CCFFFFFF"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    <View android:layout_width="2dp" android:layout_height="40dp" android:background="#CCFFFFFF"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView android:id="@+id/tvMeasurements" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="12dp" android:background="#CC000000" android:fontFamily="monospace"
+        android:padding="10dp" android:text="Punta la camera sul pavimento" android:textColor="#FFFFFF" android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp" android:background="#99000000" android:padding="6dp"
+        android:text="Centra il mirino su un angolo e premi + Aggiungi" android:textColor="#CCFFFFFF" android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <LinearLayout android:id="@+id/buttonBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="12dp" android:gravity="center" android:background="#CC000000"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button android:id="@+id/btnUndo" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+            android:text="Annulla" android:layout_marginEnd="6dp" android:textColor="#FFFFFF"/>
+        <Button android:id="@+id/btnAddPoint" android:layout_width="0dp" android:layout_weight="2"
+            android:layout_height="56dp" android:text="+ Aggiungi" android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF" android:textSize="16sp" android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnSave" android:layout_width="0dp" android:layout_weight="1.5"
+            android:layout_height="56dp" android:text="Salva PNG" android:backgroundTint="#388E3C"
+            android:textColor="#FFFFFF" android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnClear" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+            android:text="Reset" android:textColor="#EF5350"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
